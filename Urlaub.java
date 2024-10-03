@@ -3,6 +3,7 @@ public class Urlaub
     private String ort;
     private int preis;
     private boolean allInclusive;
+    private boolean lastMinute;
     
     public String getOrt()
     {
