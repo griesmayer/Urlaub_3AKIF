@@ -46,6 +46,15 @@ public class Urlaub
     {
         allInclusive = neuAllInclusive;
     }
+    
+    /*
+     * New York - 2310 EUR - AllInclusive: false
+     * Berlin - 999 EUR - AllInclusive: true
+     */
+    public void printUrlaub()
+    {
+        System.out.println(ort + " - " + preis + " EUR - AllInclusive: " + allInclusive);
+    }
 }
 
 
