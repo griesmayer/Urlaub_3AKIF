@@ -1,8 +1,15 @@
 public class Urlaub
 {
-    private String ort;
-    private int preis;
-    private boolean allInclusive;
+    private String  ort;           // Der Urlaubsort
+    private int     preis;         // Kosten inkl. Steuer
+    private boolean allInclusive;  // Verpflegung inkl.
+    
+    public Urlaub(String neuOrt, int neuPreis, boolean neuAllInclusive)
+    {
+        setOrt(neuOrt);
+        setPreis(neuPreis);
+        setAllInclusive(neuAllInclusive);
+    }
     
     public String getOrt()
     {
@@ -21,6 +28,7 @@ public class Urlaub
     
     public void setOrt(String neuOrt)
     {
+        // Die Eigenschaft ort wird auf den Wert des Parameters gesetzt.
         ort = neuOrt;
     }
     
@@ -29,6 +37,11 @@ public class Urlaub
         preis = neuPreis;
     }
     
+    /*
+     * Die Eigenschaft allInclusive wird
+     * auf den Wert den übergbenen Parameters
+     * gesetzt
+     */
     public void setAllInclusive(boolean neuAllInclusive)
     {
         allInclusive = neuAllInclusive;
