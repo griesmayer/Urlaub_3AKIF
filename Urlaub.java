@@ -72,9 +72,18 @@ public class Urlaub
         this.ort = ort;
     }
     
+    // 500 .. 3000
     public void setPreis(int preis)
     {
-        this.preis = preis;
+        if ((preis >= 500) && (preis <= 3000))
+        {
+            this.preis = preis;
+        }
+        else
+        {
+            System.out.println("Fehler: ungültiger Preis. Muss zw. 500 und 3000 sein!");
+            this.preis = 1999;
+        }
     }
     
     public void setAllInclusive(boolean allInclusive)
