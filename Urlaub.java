@@ -47,14 +47,43 @@ public class Urlaub
         return allInclusive;
     }
     
+    public String getZielort()
+    {
+        int pos;
+        String zielOrt;
+        
+        pos = ort.indexOf("-");         //5
+        zielOrt = ort.substring(0, pos);
+        return zielOrt;
+    }
+    
+    public String getLand()
+    {
+        int pos;
+        String land;
+        
+        pos = ort.indexOf("-")+1;
+        land = ort.substring(pos);
+        return land;
+    }
+    
     public void setOrt(String ort)
     {
         this.ort = ort;
     }
     
+    // 500 .. 3000
     public void setPreis(int preis)
     {
-        this.preis = preis;
+        if ((preis >= 500) && (preis <= 3000))
+        {
+            this.preis = preis;
+        }
+        else
+        {
+            System.out.println("Fehler: ungültiger Preis. Muss zw. 500 und 3000 sein!");
+            this.preis = 1999;
+        }
     }
     
     public void setAllInclusive(boolean allInclusive)
