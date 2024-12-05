@@ -6,34 +6,75 @@ public class ReiseBuro
     
     public void loschen(Urlaub welcher)
     {
-        //todo
+        if (welcher != null)
+        {
+            if (urlaub0 == welcher)
+            {
+                urlaub0 = null;
+                welcher.setReiseBuro(null);
+            }
+            else
+            {
+                if (urlaub1 == welcher)
+                {
+                    urlaub1 = null;
+                    welcher.setReiseBuro(null);
+                }
+                else
+                {
+                    if (urlaub2 == welcher)
+                    {
+                        urlaub2 = null;
+                        welcher.setReiseBuro(null);
+                    }
+                    else
+                    {
+                        System.out.println("Fehler: nicht in diesem Reiseburo angeboten!");
+                    }
+                }
+            }
+        }
+        else
+        {
+            System.out.println("Fehler: kein Urlaub!");
+        }
     }
     
     public void hinzufugen(Urlaub welcher)
     {
         if (welcher != null)
         {
-            if (urlaub0 == null)
+            if (welcher.getReiseBuro() == null)
             {
-                urlaub0 = welcher;
-            }
-            else
-            {
-                if (urlaub1 == null)
+                if (urlaub0 == null)
                 {
-                    urlaub1 = welcher;
+                    urlaub0 = welcher;
+                    welcher.setReiseBuro(this);
                 }
                 else
                 {
-                    if (urlaub2 == null)
+                    if (urlaub1 == null)
                     {
-                        urlaub2 = welcher;
+                        urlaub1 = welcher;
+                        welcher.setReiseBuro(this);
                     }
                     else
                     {
-                        System.out.println("Fehler: keine weiteren Angebote mehr möglich!");
+                        if (urlaub2 == null)
+                        {
+                            urlaub2 = welcher;
+                            welcher.setReiseBuro(this);
+                        }
+                        else
+                        {
+                            System.out.println("Fehler: keine weiteren Angebote mehr möglich!");
+                        }
                     }
                 }
+            }
+            else
+            {
+                System.out.println("Fehler: Urlaub wird schon angeboten!");
             }
         }
         else

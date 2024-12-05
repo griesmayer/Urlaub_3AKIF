@@ -1,8 +1,9 @@
 public class Urlaub
 {
-    private String  ort;
-    private int     preis;
-    private boolean allInclusive;
+    private String    ort;
+    private int       preis;
+    private boolean   allInclusive;
+    private ReiseBuro reiseBuro;
     
     public Urlaub(String ort, int preis, boolean allInclusive)
     {
@@ -67,6 +68,11 @@ public class Urlaub
         return land;
     }
     
+    public ReiseBuro getReiseBuro()
+    {
+        return reiseBuro;
+    }
+    
     public void setOrt(String ort)
     {
         this.ort = ort;
@@ -89,6 +95,11 @@ public class Urlaub
     public void setAllInclusive(boolean allInclusive)
     {
         this.allInclusive = allInclusive;
+    }
+    
+    public void setReiseBuro(ReiseBuro reiseBuro)
+    {
+        this.reiseBuro = reiseBuro;
     }
     
     public void loschen(ReiseBuro wo)
