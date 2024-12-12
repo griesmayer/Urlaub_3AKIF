@@ -102,9 +102,16 @@ public class Urlaub
         this.reiseBuro = reiseBuro;
     }
     
-    public void loschen(ReiseBuro wo)
+    public void loschen()
     {
-        //todo
+        if (reiseBuro != null)
+        {
+            reiseBuro.loschen(this);
+        }
+        else
+        {
+            System.out.println("Fehler: nicht im Reisebüro angeboten!");
+        }
     }
     
     public void hinzufugen(ReiseBuro wo)
